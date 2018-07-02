@@ -70,13 +70,20 @@ Note: When you're done, submit a PR.
   No, you have to then migrate
 
 18. How does a model relate to a database?
+  The model has methods to run on the database. It treats the rows of the database as instances of the model.
 
 19. What is the difference between `#new` and `#create`?
   create does both new and save
 
 
 ### Review Questions:  
-20. Given a CSV file (“films.csv”) with these headers [id, title, description], how would you load these into your database to create new instances of Film?  
+20. Given a CSV file (“films.csv”) with these headers [id, title, description], how would you load these into your database to create new instances of Film?
+  In the seeds file:
+  CSV.foreach('./films.csv', headers: true, header_converters: :symbol) do |film|
+    Film.create(id: film[:id],
+              title: film[:title],
+              description: film[:description],
+  end
 
 21. Given the following hash:
 ```
@@ -88,6 +95,7 @@ activities = {
 }
 ```
 How would I add 'granola bar' to things you should have when hiking?
+activities[hiking][supplies] << 'granola bar'
 
 22. What are the 4 Principles of OOP? Give a one sentence explanation of each.
   1. Encapsulation - keeping fields within a class private
