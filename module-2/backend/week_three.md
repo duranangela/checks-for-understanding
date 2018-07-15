@@ -10,7 +10,7 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
 ### Week 3 Questions
 
 1. What is the entry at the command line to create a new rails app?
-  rails new <project name>
+  rails new <project name> -T -d="postgresql" --skip-turbolinks --skip-spring
 
 2. What do Models generally inherit from in rails?
   ApplicationRecord
