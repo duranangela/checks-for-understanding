@@ -28,7 +28,7 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
   for example, horses_path instead of /horses for the index page. You want to use them all the time.
 
 7. What's the difference between what `_url` and `_path` return when combined with a routes prefix?
-
+  `_path` returns the just uri while `_url` returns the entire url including the whole beginning part
 
 8. What are strong params and why are they necessary?
   Strong params define what attributes are allowed and necessary for updates - they provide a layer of security so users don't 'accidentally' mess up sensitive info.
